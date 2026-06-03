@@ -1,3 +1,4 @@
+````md
 # 🚀 Flask CI/CD Pipeline Project
 
 A production-style Flask application with complete CI/CD pipeline using **GitHub Actions + Docker + Docker Hub**.
@@ -35,7 +36,7 @@ flask-cicd-app/
 │   └── routes.py
 │
 ├── tests/
-│   ├── test_routes.py
+│   └── test_routes.py
 │
 ├── .github/
 │   └── workflows/
@@ -44,7 +45,8 @@ flask-cicd-app/
 ├── Dockerfile
 ├── requirements.txt
 ├── wsgi.py
-└── README.md
+├── README.md
+└── Screenshots/
 ```
 
 ---
@@ -53,10 +55,10 @@ flask-cicd-app/
 
 - Flask API with health check
 - Unit testing with Pytest
-- Code coverage support
 - Dockerized application
 - CI/CD pipeline automation
 - Docker Hub integration
+- Automated image publishing
 
 ---
 
@@ -68,7 +70,8 @@ flask-cicd-app/
 GET /
 ```
 
-Response:
+### Response
+
 ```json
 {
   "message": "Hello from Flask CI/CD app!",
@@ -84,7 +87,8 @@ Response:
 GET /health
 ```
 
-Response:
+### Response
+
 ```json
 {
   "status": "healthy"
@@ -96,6 +100,7 @@ Response:
 # ▶️ How to Run Project Locally
 
 ## 1. Clone Repository
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/flask-cicd-app.git
 cd flask-cicd-app
@@ -106,12 +111,14 @@ cd flask-cicd-app
 ## 2. Create Virtual Environment
 
 ### Windows
+
 ```bash
 py -m venv venv
 venv\Scripts\activate
 ```
 
-### Linux/Mac
+### Linux / macOS
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -134,6 +141,7 @@ python -m flask --app wsgi:app run
 ```
 
 Open:
+
 ```text
 http://127.0.0.1:5000
 ```
@@ -150,99 +158,88 @@ pytest --cov=app
 
 # 🐳 Docker Setup
 
-## Build Image
+## Build Docker Image
+
 ```bash
 docker build -t flask-cicd-app .
 ```
 
-## Run Container
+## Run Docker Container
+
 ```bash
-docker run -p 5000:5000 flask-cicd-app
+docker run -d -p 5000:5000 flask-cicd-app
 ```
 
 ---
 
 # 🔄 CI/CD Pipeline
 
-Every push to `main` triggers:
+Every push to the `main` branch automatically triggers:
 
-1. Install dependencies
-2. Run tests
-3. Build Docker image
-4. Push image to Docker Hub
+1. Checkout Source Code
+2. Install Dependencies
+3. Run Unit Tests
+4. Build Docker Image
+5. Login to Docker Hub
+6. Push Docker Image
+7. Publish Build Status
 
 ---
 
-# 📸 Screenshots Required
+# 📸 Screenshots
 
 ## 1️⃣ GitHub Repository
-- Project structure
-- README view
 
-📌 File:
-```text
-Screenshots/github-repo.png
-```
+Repository structure and project files.
+
+![GitHub Repository](Screenshots/github-repo.png)
 
 ---
 
-## 2️⃣ GitHub Actions Success
-- Workflow passed
-- All green checks
+## 2️⃣ GitHub Actions Workflow
 
-📌 File:
-```text
-Screenshots/github-actions.png
-```
+Successful workflow execution.
+
+![GitHub Actions](Screenshots/github-actions.png)
 
 ---
 
+## 3️⃣ Pytest Execution
 
-## 3️⃣ Pytest Output
-- Tests passed
-- Coverage report
+Test cases executed successfully.
 
-📌 File:
-```text
-Screenshots/pytest.png
-```
+![Pytest Output](Screenshots/pytest.png)
 
 ---
 
-## 4️⃣ Flask App Running
-- Browser output of `/`
+## 4️⃣ Flask Application Running
 
-📌 File:
-```text
-Screenshots/flask-home.png
-```
+Application running in browser.
+
+![Flask Home](Screenshots/flask-home.png)
 
 ---
 
 ## 5️⃣ Health Endpoint
-- `/health` response
 
-📌 File:
-```text
-Screenshots/health.png
-```
+Health endpoint response.
+
+![Health Endpoint](Screenshots/health.png)
 
 ---
 
-## 6️⃣ Docker Hub Image
-- Tags (latest + SHA)
+## 6️⃣ Docker Hub Repository
 
-📌 File:
-```text
-Screenshots/dockerhub.png
-```
+Docker image successfully pushed.
+
+![DockerHub](Screenshots/dockerhub.png)
 
 ---
 
 # 📂 Screenshot Folder Structure
 
-```text
-screenshots/
+```
+Screenshots/
 ├── github-repo.png
 ├── github-actions.png
 ├── pytest.png
@@ -253,40 +250,46 @@ screenshots/
 
 ---
 
-# 🧹 Resource Cleanup
+# 🧹 Cleanup Commands
 
-## Stop Local Server
-```bash
-CTRL + C
-```
+## Stop Running Container
 
-## Remove venv
-```bash
-rm -rf venv
-```
-
-## Remove Docker Containers
 ```bash
 docker stop <container_id>
 docker rm <container_id>
 ```
 
-## Remove Images
+## Remove Docker Image
+
 ```bash
 docker rmi <image_id>
+```
+
+## Remove Virtual Environment
+
+### Linux/macOS
+
+```bash
+rm -rf venv
+```
+
+### Windows
+
+```cmd
+rmdir /s /q venv
 ```
 
 ---
 
 # 💡 Key Learnings
 
-- CI/CD pipeline automation
-- Docker containerization
-- GitHub Actions workflow
-- Flask API development
-- DevOps deployment flow
+- Flask Application Development
+- Docker Containerization
+- GitHub Actions CI/CD
+- Automated Testing with Pytest
+- Docker Hub Integration
+- DevOps Pipeline Automation
 
 ---
-
 
 
