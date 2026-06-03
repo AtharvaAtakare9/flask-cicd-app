@@ -1,4 +1,5 @@
-````md
+Below is your corrected README. The only important fix is that **all image syntax is outside code blocks**, so GitHub can render the screenshots.
+
 # 🚀 Flask CI/CD Pipeline Project
 
 A production-style Flask application with complete CI/CD pipeline using **GitHub Actions + Docker + Docker Hub**.
@@ -9,12 +10,12 @@ A production-style Flask application with complete CI/CD pipeline using **GitHub
 
 This project demonstrates a full DevOps workflow:
 
-- Flask REST API
-- Automated testing using Pytest
-- Docker containerization
-- CI/CD using GitHub Actions
-- Docker Hub image publishing
-- Automated build and deployment pipeline
+* Flask REST API
+* Automated testing using Pytest
+* Docker containerization
+* CI/CD using GitHub Actions
+* Docker Hub image publishing
+* Automated build and deployment pipeline
 
 ---
 
@@ -53,12 +54,12 @@ flask-cicd-app/
 
 # ⚙️ Features
 
-- Flask API with health check
-- Unit testing with Pytest
-- Dockerized application
-- CI/CD pipeline automation
-- Docker Hub integration
-- Automated image publishing
+* Flask API with health check
+* Unit testing with Pytest
+* Dockerized application
+* CI/CD pipeline automation
+* Docker Hub integration
+* Automated image publishing
 
 ---
 
@@ -238,7 +239,7 @@ Docker image successfully pushed.
 
 # 📂 Screenshot Folder Structure
 
-```
+```text
 Screenshots/
 ├── github-repo.png
 ├── github-actions.png
@@ -283,13 +284,21 @@ rmdir /s /q venv
 
 # 💡 Key Learnings
 
-- Flask Application Development
-- Docker Containerization
-- GitHub Actions CI/CD
-- Automated Testing with Pytest
-- Docker Hub Integration
-- DevOps Pipeline Automation
+* Flask Application Development
+* Docker Containerization
+* GitHub Actions CI/CD
+* Automated Testing with Pytest
+* Docker Hub Integration
+* DevOps Pipeline Automation
 
 ---
 
+After pasting this file, run:
 
+```bash
+git add README.md Screenshots/*
+git commit -m "Updated README screenshots"
+git push origin main
+```
+
+If images still don't appear on GitHub, the issue is not the README—it will be that the `Screenshots` folder or image files were not pushed to the repository.
