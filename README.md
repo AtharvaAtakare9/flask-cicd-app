@@ -1,4 +1,3 @@
-Below is your corrected README. The only important fix is that **all image syntax is outside code blocks**, so GitHub can render the screenshots.
 
 # 🚀 Flask CI/CD Pipeline Project
 
@@ -293,12 +292,3 @@ rmdir /s /q venv
 
 ---
 
-After pasting this file, run:
-
-```bash
-git add README.md Screenshots/*
-git commit -m "Updated README screenshots"
-git push origin main
-```
-
-If images still don't appear on GitHub, the issue is not the README—it will be that the `Screenshots` folder or image files were not pushed to the repository.
